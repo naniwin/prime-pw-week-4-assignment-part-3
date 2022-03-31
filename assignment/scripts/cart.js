@@ -31,11 +31,10 @@ function listItems(array){
     for (let i=0; i < array.length; i++){
         console.log(array[i]);        
     }
-    return "list of items complete";
 }   //end function
 // test to call the function listItem //
 console.log('items in the list: ');
-console.log(listItems(basket)); //end test
+listItems(basket); //end test
 // 
 // - Create a function called `empty`. It should:
 //   - reset the `basket` to an empty array
@@ -43,8 +42,7 @@ function empty(array){
     while(array.length){
         array.shift();
     }
-    return 'to empty list';
 } //end reset array
 // test to call the function empty //
-console.log(empty(basket));
+empty(basket);
 console.log(basket);
