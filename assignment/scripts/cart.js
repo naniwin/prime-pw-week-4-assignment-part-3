@@ -5,19 +5,25 @@ console.log('***** Cart Functions *****');
 // 
 // Create a global variable named `basket` and set it to an empty array.
 let basket = [];
+const maxItems = 5; //moved global variable to the top
 // 
 // Create a function called `addItem`. It should:
 //   - take an input parameter for a string `item`
 //   - add the new item to the global array `basket`. 
 //   - return `true` indicating the item was added
 function addItem( item, array){
-    array.push(item);
-    for (let i=0; i < array.length; i++){
-        if ( array[i] === item){
-            return true;
-        }
+    if(isFull(array)){
+        return false;
+    } else {
+        array.push(item);
+        return true;
     }
-}   //end function
+    // below for initial addItem function //
+    // array.push(item);
+    // if ( array[array.length-1] === item){
+    //     return true;
+    // }
+}   //end function 
 // test to call the function addItem//
 let fruit = 'apple';
 console.log ('checking if apple in basket (should be true):', addItem(fruit,basket)); 
@@ -48,8 +54,7 @@ console.log('should show empty array:', basket);
 
 /////  Stretch Goals  /////
 // 1.
-const maxItems = 5;
-// 
+// assigned variable to the top
 // 2.
 function isFull(array){
     if(array.length < maxItems){
@@ -64,3 +69,4 @@ console.log('to show false when basket is less than 5:', isFull(basketEmpty));
 console.log('to show true when basket is 5 or more:', isFull(basketFull));
 // 
 // 3.
+// please look above at addItem function
